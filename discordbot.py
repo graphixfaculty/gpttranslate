@@ -42,7 +42,8 @@ async def on_message(message):
             )
             bot_response = completion.choices[0]['message']['content']
             print(bot_response)
-            await message.channel.send(bot_response)
+            await message.channel.send(bot_response, {split: true})
+            #await message.channel.send(bot_response)
         except Exception as e:
             error_details = f"Error: {str(e)}"  # Capturing error details
             print(error_details)  # Logging error
