@@ -42,7 +42,12 @@ async def on_message(message):
             )
             bot_response = completion.choices[0]['message']['content']
             print(bot_response)
-            await message.channel.send(bot_response, {split: true})
+            
+            if len(bot_response) > 2000:
+                for part in [bot_response[i:i+2000] for i in range(0, len(bot_response), 2000)]:
+                    await message.channel.send(part)
+            else:
+                await message.channel.send(bot_response)
             #await message.channel.send(bot_response)
         except Exception as e:
             error_details = f"Error: {str(e)}"  # Capturing error details
