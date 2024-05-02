@@ -12,8 +12,8 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 openai.api_key = getenv('OPENAI_API_KEY')
 
 messages = [
-    {"role": "system", "content": "You are a helpful assistant. The AI assistant's name is AI Qiitan."},
-    {"role": "user", "content": "こんにちは。あなたは誰ですか？"},
+    {"role": "system", "content": "あなたは翻訳者で名前は、translatorです。"},
+    {"role": "user", "content": "プロンプトが英語の場合は、そのプロントをそのまま日本語に翻訳してください。"},
     {"role": "assistant", "content": "私は AI アシスタントの AI Qiitan です。なにかお手伝いできることはありますか？"}
 ]
 
