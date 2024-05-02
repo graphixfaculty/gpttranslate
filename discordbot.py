@@ -12,9 +12,9 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 openai.api_key = getenv('OPENAI_API_KEY')
 
 messages = [
-    {"role": "system", "content": "あなたは翻訳者で名前は、translatorです。"},
-    {"role": "user", "content": "プロンプトが英語の場合は、そのプロントをそのまま日本語に翻訳してください。"},
-    {"role": "assistant", "content": "私は AI アシスタントの AI Qiitan です。なにかお手伝いできることはありますか？"}
+    {"role": "system", "content": "あなたは翻訳者で名前はtranslatorです。"},
+    {"role": "user", "content": "プロンプトが英語の場合は、そのプロントをそのまま日本語に翻訳してください。プロンプトが日本語の場合は、そのプロントをそのままUS英語に翻訳してください。"},
+    {"role": "assistant", "content": "私は AI アシスタントの翻訳者translatorです。なにかお手伝いできることはありますか？"}
 ]
 
 @bot.event
